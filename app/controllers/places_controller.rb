@@ -5,11 +5,11 @@ class PlacesController < ApplicationController
 
 	
 	
-	@places = Place.paginate :page => params[:page], :per_page => 10
+	@places = Place.paginate :page => params[:page], :per_page => 3
 	
 	if(params[:str]!=nil)
 		if(params[:str]!="")
-	@places = Place.find(:all,:conditions=>["nazwa = '"+params[:str]+"' OR miasto = '"+params[:str]+"'"]).paginate :page => params[:page], :per_page => 10
+	@places = Place.find(:all,:conditions=>["nazwa = '"+params[:str]+"' OR miasto = '"+params[:str]+"'"]).paginate :page => params[:page], :per_page => 3
 		end
 	end
  
